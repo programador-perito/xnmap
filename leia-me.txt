@@ -1,0 +1,9 @@
+para usar o xnmap vc deve instalar o nmap em sua distro!
+se for debian ou derivados dele vc instala com o comando:
+sudo apt-get install nmap
+a execução do programa é simples...
+basta vc entrar na pasta em que se encontra o script pelo terminal e dar o comando:
+chmod +x xnmap
+./xnmap
+fique á vontade para modifica-lo tambem ;-)
+abraços!!!
