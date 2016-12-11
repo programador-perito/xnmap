@@ -1,0 +1,94 @@
+﻿#!/bin/bash
+### criado por perito ###
+### email: programador-perito@openmailbox.org ###
+### menu ###
+echo "by: perito"
+echo ""
+echo "escolha uma opção:"
+echo "1) escanear localhost"
+echo "2) escanear ip e descobrir portas"
+echo "3) escanear ip e descobrir S.O."
+echo "4) escaneamento rapido de ip"
+echo "5) escanear um banco de ip"
+echo "0) sair"
+read r;
+### fim do menu e inicio da brincadeira ###
+if [ "$r" == "0" ];
+then
+exit
+elif [ "$r" == "1" ];
+then
+nmap localhost
+elif [ "$r" == "2" ];
+then
+echo "digite o ip:"
+read ip;
+clear
+echo "deseja criar log do scanner?"
+echo "1) sim"
+echo "2) não"
+read d;
+if [ "$d" == "1" ];
+then
+nmap -oN xnmap\ log.txt $ip
+elif [ "$d" == "2" ];
+then
+nmap $ip
+else
+echo "command not found!!!"
+fi
+elif [ "$r" == "3" ];
+then
+echo "digite o ip:"
+read ip;
+clear
+echo "deseja salvar log do scanner?"
+echo "1) sim"
+echo "2) não"
+read d;
+if [ "$d" == "1" ];
+then
+nmap -A -oN xnmap\ log.txt $ip
+else
+echo "command not found!!!"
+fi
+elif [ "$r" == "4" ];
+then 
+echo "digite o ip:"
+read ip;
+clear
+echo "deseja salvar log do scanner?"
+echo "1) sim"
+echo "2) não"
+read d;
+if [ "$d" == "1" ];
+then
+nmap -T5 -oN xnmap\ log.txt $ip
+elif [ "$d" == "2" ];
+then
+nmap -T5 $ip
+else
+echo "command not found!!!"
+fi
+elif [ "$r" == "5" ];
+then
+echo "digite o nome do arquivo *.txt:"
+read txt;
+clear
+echo "deseja salvar log do scanner?"
+echo "1) sim"
+echo "2) não"
+read d;
+if [ "$d" == "1" ];
+then
+nmap -oN xnmap\ log.txt -iL $txt
+elif [ "$d" == "2" ];
+then
+nmap -iL $txt
+else
+echo "command not found!!!"
+fi
+else
+echo "command not found!"
+fi
+### fim do script ###
