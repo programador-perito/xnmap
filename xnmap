@@ -30,10 +30,10 @@ echo "2) não"
 read d;
 if [ "$d" == "1" ];
 then
-nmap -oN xnmap\ log.txt $ip
+nmap -v -oN xnmap\ log.txt $ip
 elif [ "$d" == "2" ];
 then
-nmap $ip
+nmap -v $ip
 else
 echo "command not found!!!"
 fi
@@ -48,7 +48,9 @@ echo "2) não"
 read d;
 if [ "$d" == "1" ];
 then
-nmap -A -oN xnmap\ log.txt $ip
+nmap -v -A -oN xnmap\ log.txt $ip
+elif [ "$d" == "2" ]; then
+nmap -v -A $ip
 else
 echo "command not found!!!"
 fi
@@ -63,10 +65,10 @@ echo "2) não"
 read d;
 if [ "$d" == "1" ];
 then
-nmap -T5 -oN xnmap\ log.txt $ip
+nmap -v -T5 -oN xnmap\ log.txt $ip
 elif [ "$d" == "2" ];
 then
-nmap -T5 $ip
+nmap -v -T5 $ip
 else
 echo "command not found!!!"
 fi
@@ -81,10 +83,10 @@ echo "2) não"
 read d;
 if [ "$d" == "1" ];
 then
-nmap -oN xnmap\ log.txt -iL $txt
+nmap -v -oN xnmap\ log.txt -iL $txt
 elif [ "$d" == "2" ];
 then
-nmap -iL $txt
+nmap -v -iL $txt
 else
 echo "command not found!!!"
 fi
